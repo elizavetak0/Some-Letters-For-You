@@ -68,55 +68,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateTimerDisplay();
 
-  // --------- COUNTER --------- //
-  function updateDayCounter() {
-    const counter = document.getElementById("day-counter");
-    if (!counter) return;
-
-    const startDate = new Date(2024, 0, 1, 0, 0, 0);
-    const now = new Date();
-
-    let diff = now - startDate;
-
-    const msInSecond = 1000;
-    const msInMinute = msInSecond * 60;
-    const msInHour = msInMinute * 60;
-    const msInDay = msInHour * 24;
-
-    const days = Math.floor(diff / msInDay);
-    diff %= msInDay;
-
-    const hours = Math.floor(diff / msInHour);
-    diff %= msInHour;
-
-    const minutes = Math.floor(diff / msInMinute);
-    diff %= msInMinute;
-
-    const seconds = Math.floor(diff / msInSecond);
-
-    counter.textContent =
-      `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
-  }
-
-  setInterval(updateDayCounter, 1000);
-  updateDayCounter();
-
   // --------- LETTER NAVIGATION --------- //
   function setupLetterNavigation(containerSelector, navSelector) {
     const container = document.querySelector(containerSelector);
     const nav = document.querySelector(navSelector);
 
-    if (!container || !nav) {
-      console.log("Missing:", containerSelector, navSelector);
-      return;
-    }
+    if (!container || !nav) return;
 
     const letters = container.querySelectorAll(".letter");
 
-    if (!letters.length) {
-      console.log("No letters found in:", containerSelector);
-      return;
-    }
+    if (!letters.length) return;
 
     nav.innerHTML = "";
 
@@ -148,48 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  setupLetterNavigation(".poemes", ".poemes-nav");
   setupLetterNavigation(".leias", ".leias-nav");
-  setupLetterNavigation(".cartas", ".cartas-nav");
+  setupLetterNavigation(".contrat", ".contrat-nav");
 });
-
-.letters {
-  min-height: 300px;
-}
-
-.letter {
-  display: none;
-  text-align: justify;
-}
-
-.letter.is-active {
-  display: block;
-}
-
-.letter-nav {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 20;
-}
-
-.letter-btn {
-  border: 1px solid black;
-  background: white;
-  color: black;
-  font-family: "Open Sans", sans-serif;
-  padding: 0.5rem 0.9rem;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-.letter-btn:hover {
-  background: #EEE;
-}
-
-.letter-btn.is-active {
-  background: black;
-  color: white;
-}
