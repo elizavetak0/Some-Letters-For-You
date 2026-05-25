@@ -1,39 +1,45 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap");
+
 body {
   --tab-bg: #EEE;
---tab-bg-active: black;
---tab-text: black;
---tab-text-active: white;
+  --tab-bg-active: black;
+  --tab-text: black;
+  --tab-text-active: white;
 
-padding: 2rem;
-font-family: "Open Sans", sans-serif;
-letter-spacing: 2px;
-line-height: 1.5;
+  margin: 0;
+  min-height: 100vh;
+  padding: 2rem;
 
-background-image: url("img/simpsons-clouds-gifs.gif");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-background-attachment: fixed;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 2px;
+  line-height: 1.5;
 
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 2rem;
+  background-image: url("img/simpsons-clouds-gifs.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
+/* start button */
 .modal-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border: 2px solid black;
   background: white;
   color: black;
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-decoration: none;
   text-align: center;
   transition: background 0.2s, color 0.2s;
 }
+
 .modal-button:hover {
   background: black;
   color: white;
@@ -51,6 +57,7 @@ gap: 2rem;
   align-items: center;
   justify-content: center;
 }
+
 .modal:target {
   visibility: visible;
   opacity: 1;
@@ -59,10 +66,12 @@ gap: 2rem;
 
 .modal-content {
   width: 35rem;
+  max-width: 90%;
   background-color: white;
   padding: 2rem;
   position: relative;
   border: 2px solid black;
+  box-shadow: 4px 4px 0 black;
 }
 
 .modal-close-button {
@@ -94,9 +103,16 @@ gap: 2rem;
 .timer-box button {
   padding: 10px 18px;
   margin: 5px;
-  border: none;
+  border: 1px solid black;
+  background: white;
   border-radius: 12px;
   cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+}
+
+.timer-box button:hover {
+  background: black;
+  color: white;
 }
 
 /* tabs */
@@ -106,6 +122,8 @@ gap: 2rem;
   list-style: none;
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tab-menu__button {
@@ -115,25 +133,30 @@ gap: 2rem;
   color: var(--tab-text);
   padding: 0.75rem 1rem;
   letter-spacing: 2px;
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
 }
+
 .tab-menu__button.is-active {
   background: var(--tab-bg-active);
   color: var(--tab-text-active);
 }
 
+/* tab panels */
 .tab-panel {
   display: none;
   border: 2px solid black;
   padding: 1rem 2rem;
   background: white;
   max-width: 600px;
+  width: 100%;
   text-align: center;
   box-shadow: 4px 4px 0 black;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .tab-panel.is-active {
   display: block;
   opacity: 1;
@@ -148,41 +171,46 @@ gap: 2rem;
   display: none;
 }
 
+/* letters */
 .letters {
-  min-height: 300px; /* altura fixa para evitar que a caixa "pule" */
-   position: relative;
+  min-height: 300px;
+  position: relative;
 }
 
 .letter {
-   display: none;
+  display: none;
   text-align: justify;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
 }
 
 .letter.is-active {
-   display: block;
+  display: block;
   opacity: 1;
-  position: relative;
 }
 
+/* letter navigation */
 .letter-nav {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .letter-btn {
   border: 1px solid black;
   background: white;
-  font-family: 'Pixelify Sans', sans-serif;
+  color: black;
+  font-family: "Open Sans", sans-serif;
   padding: 0.3rem 0.8rem;
   cursor: pointer;
+  border-radius: 8px;
+}
+
+.letter-btn:hover {
+  background: #EEE;
 }
 
 .letter-btn.is-active {
@@ -190,6 +218,22 @@ gap: 2rem;
   color: white;
 }
 
+/* mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+    letter-spacing: 1px;
+  }
 
+  .tab-panel {
+    padding: 1rem;
+  }
 
-/*# sourceMappingURL=style.css.map */
+  .modal-content {
+    width: 85%;
+  }
+
+  #timer {
+    font-size: 32px;
+  }
+}
