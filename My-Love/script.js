@@ -151,3 +151,45 @@ document.addEventListener("DOMContentLoaded", () => {
   setupLetterNavigation(".leias", ".leias-nav");
   setupLetterNavigation(".cartas", ".cartas-nav");
 });
+
+.letters {
+  min-height: 300px;
+}
+
+.letter {
+  display: none;
+  text-align: justify;
+}
+
+.letter.is-active {
+  display: block;
+}
+
+.letter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 20;
+}
+
+.letter-btn {
+  border: 1px solid black;
+  background: white;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.letter-btn:hover {
+  background: #EEE;
+}
+
+.letter-btn.is-active {
+  background: black;
+  color: white;
+}
