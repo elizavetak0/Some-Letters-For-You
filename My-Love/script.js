@@ -29,6 +29,40 @@ modalClose.addEventListener('click', () => {
   startButton.classList.add("hidden");
 });
 
+//----------Timer----------- //
+let timerInterval;
+let timeLeft = 5 * 60; // 5 minutes in seconds
+
+function updateTimerDisplay() {
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+
+  document.getElementById("timer").textContent =
+    `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+}
+
+function startTimer() {
+  clearInterval(timerInterval);
+
+  timerInterval = setInterval(() => {
+    if (timeLeft > 0) {
+      timeLeft--;
+      updateTimerDisplay();
+    } else {
+      clearInterval(timerInterval);
+      document.getElementById("timer").textContent = "Break over 💪";
+    }
+  }, 1000);
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  timeLeft = 5 * 60;
+  updateTimerDisplay();
+}
+
+
+
 // --------- CONTADOR --------- //
 function updateDayCounter() {
   const startDate = new Date(2024, 0, 1, 0, 0, 0); // 01/01/2024 (mês começa em 0 → janeiro)
