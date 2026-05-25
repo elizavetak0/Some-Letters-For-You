@@ -1,29 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
   // --------- TABS --------- //
-  const tabs = {
-    $buttons: document.querySelectorAll(".tab-menu__button"),
-    $panels: document.querySelectorAll(".tab-panel"),
+  const tabButtons = document.querySelectorAll(".tab-menu__button");
+  const tabPanels = document.querySelectorAll("#main-content > .tab-panel");
 
-    init() {
-      for (let i = 0; i < this.$buttons.length; i++) {
-        const button = this.$buttons[i];
-        const panel = this.$panels[i];
+  tabButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      tabButtons.forEach((btn) => btn.classList.remove("is-active"));
+      tabPanels.forEach((panel) => panel.classList.remove("is-active"));
 
-        button.addEventListener("click", () => {
-          const activeButton = document.querySelector(".tab-menu__button.is-active");
-          const activePanel = document.querySelector(".tab-panel.is-active");
+      button.classList.add("is-active");
 
-          if (activeButton) activeButton.classList.remove("is-active");
-          if (activePanel) activePanel.classList.remove("is-active");
-
-          button.classList.add("is-active");
-          panel.classList.add("is-active");
-        });
+      if (tabPanels[index]) {
+        tabPanels[index].classList.add("is-active");
       }
-    }
-  };
-
-  tabs.init();
+    });
+  });
 
   // --------- MODAL --------- //
   const modalClose = document.querySelector(".modal-close-button");
@@ -39,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --------- TIMER --------- //
   let timerInterval;
-  let timeLeft = 5 * 60; // 5 minutes in seconds
+  let timeLeft = 5 * 60;
 
   function updateTimerDisplay() {
     const timer = document.getElementById("timer");
@@ -111,77 +102,52 @@ document.addEventListener("DOMContentLoaded", () => {
   updateDayCounter();
 
   // --------- LETTER NAVIGATION --------- //
-  function createNavigator(containerSelector, navSelector, perPage = 5) {
-    const items = document.querySelectorAll(`${containerSelector} .letter`);
+  function setupLetterNavigation(containerSelector, navSelector) {
+    const container = document.querySelector(containerSelector);
     const nav = document.querySelector(navSelector);
 
-    if (!items.length || !nav) return;
-
-    let currentIndex = 0;
-    let currentPage = 0;
-
-    function showItem(index) {
-      items.forEach((item) => item.classList.remove("is-active"));
-
-      currentIndex = index;
-      items[currentIndex].classList.add("is-active");
-
-      currentPage = Math.floor(currentIndex / perPage);
-      renderButtons();
+    if (!container || !nav) {
+      console.log("Missing:", containerSelector, navSelector);
+      return;
     }
 
-    function renderButtons() {
-      nav.innerHTML = "";
+    const letters = container.querySelectorAll(".letter");
 
-      const start = currentPage * perPage;
-      const end = Math.min(start + perPage, items.length);
-
-      if (currentPage > 0) {
-        const prevBtn = document.createElement("button");
-        prevBtn.textContent = "«";
-        prevBtn.classList.add("letter-btn");
-
-        prevBtn.addEventListener("click", () => {
-          currentPage--;
-          renderButtons();
-        });
-
-        nav.appendChild(prevBtn);
-      }
-
-      for (let i = start; i < end; i++) {
-        const btn = document.createElement("button");
-        btn.textContent = i + 1;
-        btn.classList.add("letter-btn");
-
-        if (i === currentIndex) {
-          btn.classList.add("is-active");
-        }
-
-        btn.addEventListener("click", () => {
-          showItem(i);
-        });
-
-        nav.appendChild(btn);
-      }
-
-      if (end < items.length) {
-        const nextBtn = document.createElement("button");
-        nextBtn.textContent = "»";
-        nextBtn.classList.add("letter-btn");
-
-        nextBtn.addEventListener("click", () => {
-          currentPage++;
-          renderButtons();
-        });
-
-        nav.appendChild(nextBtn);
-      }
+    if (!letters.length) {
+      console.log("No letters found in:", containerSelector);
+      return;
     }
 
-    showItem(0);
+    nav.innerHTML = "";
+
+    letters.forEach((letter, index) => {
+      const button = document.createElement("button");
+      button.textContent = index + 1;
+      button.classList.add("letter-btn");
+
+      button.addEventListener("click", () => {
+        letters.forEach((item) => item.classList.remove("is-active"));
+        letters[index].classList.add("is-active");
+
+        nav.querySelectorAll(".letter-btn").forEach((btn) => {
+          btn.classList.remove("is-active");
+        });
+
+        button.classList.add("is-active");
+      });
+
+      nav.appendChild(button);
+    });
+
+    letters.forEach((letter) => letter.classList.remove("is-active"));
+    letters[0].classList.add("is-active");
+
+    const firstButton = nav.querySelector(".letter-btn");
+    if (firstButton) {
+      firstButton.classList.add("is-active");
+    }
   }
 
-  createNavigator(".cartas", ".cartas-nav");
-  createNavigator(".leias", ".leias-nav");
+  setupLetterNavigation(".leias", ".leias-nav");
+  setupLetterNavigation(".cartas", ".cartas-nav");
 });
