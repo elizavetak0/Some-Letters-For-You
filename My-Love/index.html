@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Study Support Portal</title>
   <link rel="stylesheet" href="style.css">
-
   <link rel="icon" type="image/png" href="img/image-removebg-preview.png">
 </head>
+
 <body>
   <!-- initial button -->
   <a href="#launch-modal" id="start-button" class="modal-button" aria-label="Launch Modal">
-      Start
+    Start
   </a>
 
   <!-- modal -->
@@ -43,33 +43,44 @@
       </li>
     </ul>
 
+    <!-- ACCUEIL -->
     <section class="tab-panel is-active">
       <h2 class="tab-panel__heading">Bienvenue</h2>
-        <p>Ce site web est là uniquement pour te donner un petit coup de pouce. Respire un bon coup, bois un peu d'eau, fais craquer tes doigts, puis va t'attaquer à une petite tâche. Je crois en toi. Détendez-vous un peu avant de replonger dans le calvaire des études. </p>
-          <ul>
-            <br></br>Quelques faits:<br></br>
-            <li>Intégrité architecturale : stable.</li>
-            <li>Niveau de geek : critique. </li>
-            <li>Taille de tes fesses : 67 cm. </li>
-          </ul>  
+      <p>
+        Ce site web est là uniquement pour te donner un petit coup de pouce.
+        Respire un bon coup, bois un peu d'eau, fais craquer tes doigts,
+        puis va t'attaquer à une petite tâche. Je crois en toi.
+        Détends-toi un peu avant de replonger dans le calvaire des études.
+      </p>
+
+      <p>Quelques faits:</p>
+      <ul>
+        <li>Intégrité architecturale : stable.</li>
+        <li>Niveau de geek : critique.</li>
+        <li>Taille de tes fesses : 67 cm.</li>
+      </ul>
     </section>
 
+    <!-- TIMER -->
     <section class="tab-panel">
       <h2 class="tab-panel__heading">Minuteur de pause</h2>
-      <h2>5 Minuterie de réinitialisation</h2>
+      <h2>Minuteur de réinitialisation de 5 minutes</h2>
 
-    <div class="timer-box">
-      <p id="timer">05:00</p>
+      <div class="timer-box">
+        <p id="timer">05:00</p>
         <button onclick="startTimer()">Start</button>
         <button onclick="resetTimer()">Reset</button>
-    </div>
+      </div>
     </section>
 
+    <!-- POEME -->
     <section class="tab-panel">
       <h2 class="tab-panel__heading">Poème</h2>
-       <div class="letters leias">
-         <div class="letter is-active">
-           <p>On s’est rencontrés sur Hinge, c’est un peu fou,<br>
+
+      <div class="letters poemes">
+        <div class="letter is-active">
+          <p>
+            On s’est rencontrés sur Hinge, c’est un peu fou,<br>
             mais je suis contente que tu aies cliqué sur nous.<br>
             Maintenant les canards sont à nous, le bleu canard est ta couleur,<br>
             et la glace à la menthe te va droit au cœur.<br><br>
@@ -82,163 +93,131 @@
             Tu es nerdy, motivé, parfois un peu stressé,<br>
             mais c’est quand même toi que je préfère embêter.<br>
             Alors voilà l’indice de ce petit site pour toi :<br>
-            je suis vraiment contente d’être tombée sur toi.</p>
+            je suis vraiment contente d’être tombée sur toi.
+          </p>
         </div>
+      </div>
+
+      <div class="letter-nav poemes-nav"></div>
     </section>
 
+    <!-- READ ME WHEN -->
     <section class="tab-panel">
-      
-       <h2 class="tab-panel__heading">À lire quand...</h2>
+      <h2 class="tab-panel__heading">À lire quand...</h2>
 
-<div class="letters leias">
+      <div class="letters leias">
+        <div class="letter is-active">
+          <h3>Tu es fatigué</h3>
+          <p>
+            Salut, mon petit génie travailleur préféré. Je sais que tu es fatigué, et je sais que ça t'agace sûrement parce que ton cerveau a encore toute une liste de choses qu'il veut terminer.
+            <br><br>
+            Mais être fatigué, ça veut dire que tu as réfléchi, construit, résolu des problèmes, que tu t'es donné à fond et que tu as surmonté beaucoup d'obstacles.
+            <br><br>
+            J'adore voir à quel point tu travailles dur. Je veux juste te rappeler que même les structures les plus solides ont besoin de soutien, et que même le cerveau le plus brillant a besoin d'une pause.
+            <br><br>
+            Alors respire profondément. Bois de l'eau. Mange quelque chose si tu en as besoin. Ferme les yeux pendant cinq minutes si ton corps t'en supplie. Puis reviens à une chose à la fois, pas à la montagne entière, juste à la prochaine étape.
+            <br><br>
+            Tu es toujours capable, même quand tu es fatigué. Tu es toujours impressionnant, même quand tu as besoin de repos. Et je suis fière de toi, non seulement pour ce que tu accomplis, mais aussi pour tes efforts incessants.
+          </p>
+        </div>
 
-  <div class="letter is-active">
-    <h3>Tu es fatigué</h3>
-    <p>
-      Salut, mon petit génie travailleur préféré. Je sais que tu es fatigué, et je sais que ça t'agace sûrement parce que ton cerveau a encore toute une liste de choses qu'il veut terminer.
-      <br><br>
-      Mais être fatigué, ça veut dire que tu as réfléchi, construit, résolu des problèmes, que tu t'es donné à fond et que tu as surmonté beaucoup d'obstacles.
-      <br><br>
-      J'adore voir à quel point tu travailles dur. Je veux juste te rappeler que même les structures les plus solides ont besoin de soutien, et que même le cerveau le plus brillant a besoin d'une pause.
-      <br><br>
-      Alors respire profondément. Bois de l'eau. Mange quelque chose si tu en as besoin. Ferme les yeux pendant cinq minutes si ton corps t'en supplie. Puis reviens à une chose à la fois, pas à la montagne entière, juste à la prochaine étape.
-      <br><br>
-      Tu es toujours capable, même quand tu es fatigué. Tu es toujours impressionnant, même quand tu as besoin de repos. Et je suis fière de toi, non seulement pour ce que tu accomplis, mais aussi pour tes efforts incessants.
-    </p>
-  </div>
+        <div class="letter">
+          <h3>Tu es débordé</h3>
+          <p>
+            Je sais à quel point tu tiens à bien faire les choses. Je sais que tu as de grands objectifs, un esprit brillant, et l’esprit de battant le plus intense que l’humanité ait jamais connu.
+            <br><br>
+            J’adore que tu te soucies de tout ça. J’adore ta motivation. J’adore que tu veuilles construire des choses dont tu es fier.
+            <br><br>
+            Je veux juste te rappeler de ne jamais être dur avec toi-même. Sinon, tu auras à m’en répondre.
+            <br><br>
+            Choisis la prochaine chose utile. Une page, un schéma, un paragraphe, un problème, un e-mail, une petite brique. Commence par là. Puis passe à la suivante. Puis à la suivante.
+            <br><br>
+            Tu n’es pas submergé parce que tu es incapable. Tu es submergé parce que tu te soucies des choses, et parce que tu essaies. Je crois tellement en toi, pas seulement quand tu as tout terminé, mais aussi pendant que tu cherches comment t’y prendre.
+          </p>
+        </div>
+      </div>
 
-  <div class="letter">
-    <h3>Tu es débordé</h3>
-    <p>
-      Je sais à quel point tu tiens à bien faire les choses. Je sais que tu as de grands objectifs, un esprit brillant, et l’esprit de battant le plus intense que l’humanité ait jamais connu.
-      <br><br>
-      J’adore que tu te soucies de tout ça. J’adore ta motivation. J’adore que tu veuilles construire des choses dont tu es fier.
-      <br><br>
-      Je veux juste te rappeler de ne jamais être dur avec toi-même. Sinon, tu auras à m’en répondre.
-      <br><br>
-      Choisis la prochaine chose utile. Une page, un schéma, un paragraphe, un problème, un e-mail, une petite brique. Commence par là. Puis passe à la suivante. Puis à la suivante.
-      <br><br>
-      Tu n’es pas submergé parce que tu es incapable. Tu es submergé parce que tu te soucies des choses, et parce que tu essaies. Je crois tellement en toi, pas seulement quand tu as tout terminé, mais aussi pendant que tu cherches comment t’y prendre.
-    </p>
-  </div>
-  
+      <div class="letter-nav leias-nav"></div>
     </section>
 
+    <!-- CONTRACT -->
     <section class="tab-panel">
       <h2 class="tab-panel__heading">Contrat de couple</h2>
-       <div class="letters leias">
-         <div class="letter is-active">
-           <p> <h3>Official Relationship Terms and Conditions – Boyfriend Agreement</h3>
 
-  <p>
-    This Agreement outlines the official terms of the relationship to maximize laughter,
-    adventures, and shared snacks.
-  </p>
+      <div class="letters contrat">
+        <div class="letter is-active">
+          <h3>Official Relationship Terms and Conditions – Boyfriend Agreement</h3>
 
-  <h4>Article 1: Purpose</h4>
-  <p>
-    The purpose of this Agreement is to officially recognize that the parties are in a
-    relationship, to minimize hangry conflicts, debates in which the girlfriend is always
-    right, and to establish rules for maximum fun.
-  </p>
+          <p>
+            This Agreement outlines the official terms of the relationship to maximize laughter,
+            adventures, and shared snacks.
+          </p>
 
-  <h4>Article 2: General Relationship Terms</h4>
-  <p>
-    <strong>Quality Time</strong> – Scheduled dates are encouraged, including watching shows,
-    walking the whole New York City, giving the best haircuts, cooking together, or building Legos.
-    <br><br>
-    <strong>Laugh Quota</strong> – Each party must provide at least one uncontrollable laugh per day,
-    via jokes, funny videos, or dad jokes, enough for at least one eye roll.
-    <br><br>
-    <strong>Respect the Nap</strong> – Napping hours are sacred; neither party shall interrupt or
-    judge the other party, as sleep is apparently important.
-  </p>
+          <h4>Article 1: Purpose</h4>
+          <p>
+            The purpose of this Agreement is to officially recognize that the parties are in a
+            relationship, to minimize hangry conflicts, debates in which the girlfriend is always
+            right, and to establish rules for maximum fun.
+          </p>
 
-  <h4>Article 3: Friends and Social Time Clause</h4>
-  <p>
-    <strong>Recognition of Friendships</strong> – Both parties acknowledge that friendships are an
-    important and valuable part of their lives and agree to respect each other’s time spent with friends.
-    <br><br>
-    <strong>Dedicated Social Time</strong> – When either party is spending time with friends or attending
-    social plans, they agree to devote their attention to the people and activities present during that time.
-    <br><br>
-    <strong>Mutual Trust and Understanding</strong> – Both parties agree to trust one another during social
-    time and understand that reduced communication during these periods reflects respect for friendships,
-    not lack of care for the relationship.
-  </p>
+          <h4>Article 2: General Relationship Terms</h4>
+          <p>
+            <strong>Quality Time</strong> – Scheduled dates are encouraged, including watching shows,
+            walking the whole New York City, giving the best haircuts, cooking together, or building Legos.
+            <br><br>
+            <strong>Laugh Quota</strong> – Each party must provide at least one uncontrollable laugh per day,
+            via jokes, funny videos, or dad jokes, enough for at least one eye roll.
+            <br><br>
+            <strong>Respect the Nap</strong> – Napping hours are sacred; neither party shall interrupt or
+            judge the other party, as sleep is apparently important.
+          </p>
 
-  <h4>Article 4: Communication</h4>
-  <p>
-    <strong>Check-Ins</strong> – Weekly gossips are mandatory, preferably with enough detail for the
-    listening party to be able to judge to their fullest potential.
-    <br><br>
-    <strong>Conflict Resolution</strong> – Disagreements will be resolved using a combination of logic,
-    apology emojis, eye rolls, and matcha drinking.
-    <br><br>
-    <strong>Transparency</strong> – Major decisions affecting the relationship, e.g. getting an egg haircut,
-    dyeing their hair neon green, or wearing flip flops with socks, require prior discussion.
-    <br><br>
-    <strong>Texting Protocol</strong> – Good sticker collections are mandatory. Excessive short messages are
-    punishable by no kisses and hugs.
-  </p>
+          <h4>Article 3: Friends and Social Time Clause</h4>
+          <p>
+            <strong>Recognition of Friendships</strong> – Both parties acknowledge that friendships are an
+            important and valuable part of their lives and agree to respect each other’s time spent with friends.
+            <br><br>
+            <strong>Dedicated Social Time</strong> – When either party is spending time with friends or attending
+            social plans, they agree to devote their attention to the people and activities present during that time.
+            <br><br>
+            <strong>Mutual Trust and Understanding</strong> – Both parties agree to trust one another during social
+            time and understand that reduced communication during these periods reflects respect for friendships,
+            not lack of care for the relationship.
+          </p>
 
-  <h4>Article 5: Language Respect and Learning Clause</h4>
-  <p>
-    <strong>Recognition of Importance</strong> – The Boyfriend acknowledges that the Russian language is an
-    important part of the Girlfriend’s identity, culture, and personal life.
-    <br><br>
-    <strong>Commitment to Learning</strong> – The Boyfriend agrees to make a good-faith effort to learn and
-    understand basic Russian over time in order to better communicate with the Girlfriend and appreciate her
-    cultural background.
-    <br><br>
-    <strong>Supportive Practice</strong> – The Girlfriend may occasionally teach the Boyfriend Russian words,
-    phrases, or expressions. The Boyfriend agrees to participate willingly and approach the learning process
-    with patience and curiosity.
-  </p>
+          <h4>Article 4: Communication</h4>
+          <p>
+            <strong>Check-Ins</strong> – Weekly gossips are mandatory, preferably with enough detail for the
+            listening party to be able to judge to their fullest potential.
+            <br><br>
+            <strong>Conflict Resolution</strong> – Disagreements will be resolved using a combination of logic,
+            apology emojis, eye rolls, and matcha drinking.
+            <br><br>
+            <strong>Transparency</strong> – Major decisions affecting the relationship, e.g. getting an egg haircut,
+            dyeing their hair neon green, or wearing flip flops with socks, require prior discussion.
+            <br><br>
+            <strong>Texting Protocol</strong> – Good sticker collections are mandatory. Excessive short messages are
+            punishable by no kisses and hugs.
+          </p>
 
-  <h4>Article 6: Travel Communication Clause</h4>
-  <p>
-    <strong>Focus on Travel Experience</strong> – When either party is traveling, the traveling party agrees
-    to prioritize their time, attention, and presence with their destination, activities, and friends or
-    companions during the trip.
-    <br><br>
-    <strong>Photo and Experience Updates</strong> – When convenient, the traveling party agrees to share
-    occasional photo updates or short messages about their experiences.
-    <br><br>
-    <strong>Mutual Understanding</strong> – Both parties agree that travel is a time for personal experiences
-    and friendships, and that communication during such periods will be flexible, respectful, and based on availability.
-  </p>
+          <h4>Article 8: Signatures</h4>
+          <p>
+            By signing this Agreement, both parties acknowledge they are entering into a loving, goofy,
+            snack-filled partnership and agree to follow these terms to the best of their abilities.
+            <br><br>
+            <strong>Signatory A &mdash; Girlfriend:</strong> ________________________
+            <br><br>
+            <strong>Signatory B &mdash; Boyfriend:</strong> ________________________
+            <br><br>
+            <strong>Date:</strong> ___________
+          </p>
+        </div>
+      </div>
 
-  <h4>Article 7: Misc.</h4>
-  <p>
-    <strong>Personal Space</strong> – Personal time is sacred, but interruptions are allowed if accompanied
-    by snacks or puzzling questions.
-    <br><br>
-    <strong>Privacy</strong> – Embarrassing TikToks, photos, and videos shall remain confidential… mostly.
-    <br><br>
-    <strong>Social Media</strong> – If ever showing or posting a photo of the other party, the photo has to
-    be designated “I look cute” and prior approval is required.
-    <br><br>
-    <strong>Hobby Clause</strong> – Each party must pursue hobbies, and even if the other party doesn’t have
-    interest in it, they have to pretend to care enthusiastically at least 70% of the time, such as for matcha making.
-  </p>
-
-  <h4>Article 8: Signatures</h4>
-  <p>
-    By signing this Agreement, both parties acknowledge they are entering into a loving, goofy,
-    snack-filled partnership and agree to follow these terms to the best of their abilities.
-    <br><br>
-    <strong>Signatory A &mdash; Girlfriend:</strong> ________________________
-    <br><br>
-    <strong>Signatory B &mdash; Boyfriend:</strong> ________________________
-    <br><br>
-    <strong>Date:</strong> ___________
-  </p>
-</div>
+      <div class="letter-nav contrat-nav"></div>
     </section>
-    
-<script src="script.js"></script>
-</body>
-</html>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
