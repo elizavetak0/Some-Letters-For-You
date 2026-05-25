@@ -174,20 +174,17 @@ body {
 /* letters */
 .letters {
   min-height: 300px;
-  position: relative;
+  width: 100%;
 }
 
 .letter {
   display: none;
   text-align: justify;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
   width: 100%;
 }
 
 .letter.is-active {
   display: block;
-  opacity: 1;
 }
 
 /* letter navigation */
@@ -195,8 +192,10 @@ body {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 999;
 }
 
 .letter-btn {
@@ -204,9 +203,10 @@ body {
   background: white;
   color: black;
   font-family: "Open Sans", sans-serif;
-  padding: 0.3rem 0.8rem;
+  padding: 0.5rem 0.9rem;
   cursor: pointer;
   border-radius: 8px;
+  font-size: 1rem;
 }
 
 .letter-btn:hover {
