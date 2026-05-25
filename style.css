@@ -134,7 +134,9 @@ body {
   gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 100%;
+
+  max-width: 800px;
+  width: 100%;
 }
 
 .tab-menu__button {
@@ -159,8 +161,10 @@ body {
   border: 2px solid black;
   padding: 1rem 2rem;
   background: white;
-  max-width: 600px;
-  width: calc(100% - 2rem);
+
+  max-width: 800px;
+  width: 100%;
+
   text-align: center;
   box-shadow: 4px 4px 0 black;
   opacity: 0;
